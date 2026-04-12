@@ -3,7 +3,9 @@
 
 int main()
 {
-  printf("hello, vengine\n");
+  printf("hello, vacuity\n");
+
+  std::cin.get();
 
   return 0;
 }

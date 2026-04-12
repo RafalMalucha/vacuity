@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 4.2)
+cmake_minimum_required(VERSION 3.30)
 
-project (vengine)
+project (vacuity)
 
-add_executable(vengine src/main.cpp)
+add_executable(vacuitye src/main.cpp)
