@@ -3,6 +3,7 @@
 #include <stdio.h>
 
 #include "core/entity.h"
+#include "core/position/position.h"
 
 int main()
 {
@@ -19,6 +20,18 @@ int main()
   {
     std::cout << entity.id << std::endl;
   }
+
+  std::cout << "------" << std::endl;
+
+  Position testPos1;
+
+  std::cout << testPos1.x << " " << testPos1.y << std::endl;
+
+  Position testPos2;
+  testPos2.x = 12.0f;
+  testPos2.y = 13.0f;
+
+  std::cout << testPos2.x << " " << testPos2.y << std::endl;
 
   std::cin.get();
 
