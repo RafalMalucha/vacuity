@@ -1,39 +1,31 @@
 #include <iostream>
-#include <vector>
 #include <stdio.h>
 
-#include "core/entity.h"
-#include "core/position/position.h"
+#include "core/Entity.h"
+#include "core/position/Position.h"
+#include "core/position/PositionStorage.h"
 
 int main()
 {
-  Entity entity0;
-  Entity entity1;
-  Entity entity2;
-  Entity entity3;
+    printf("hello, vacuity\n");
+    std::cout << "------" << std::endl;
 
-  std::vector<Entity> entities = {entity0, entity1, entity2, entity3};
+    PositionStorage positionStorage;
+    Entity entity0{21};
 
-  printf("hello, vacuity\n");
+    std::cout << entity0.id << std::endl;
+    std::cout << "------" << std::endl;
 
-  for(Entity entity : entities)
-  {
-    std::cout << entity.id << std::endl;
-  }
+    Position testPos0{12.0f, 13.0f};
 
-  std::cout << "------" << std::endl;
+    std::cout << testPos0.x << " " << testPos0.y << std::endl;
+    std::cout << "------" << std::endl;
 
-  Position testPos1;
+    positionStorage.Add(entity0, testPos0);
 
-  std::cout << testPos1.x << " " << testPos1.y << std::endl;
+    positionStorage.TestPrintAllPositions();
 
-  Position testPos2;
-  testPos2.x = 12.0f;
-  testPos2.y = 13.0f;
+    std::cin.get();
 
-  std::cout << testPos2.x << " " << testPos2.y << std::endl;
-
-  std::cin.get();
-
-  return 0;
+    return 0;
 }
