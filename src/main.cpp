@@ -3,6 +3,8 @@
 
 #include "core/Entity.h"
 #include "core/EntityManager.h"
+#include "core/name/DisplayName.h"
+#include "core/name/DisplayNameStorage.h"
 #include "core/position/Position.h"
 #include "core/position/PositionStorage.h"
 
@@ -12,6 +14,7 @@ int main()
     std::cout << "------" << std::endl;
 
     EntityManager entityManager;
+    DisplayNameStorage dNameStorage;
     PositionStorage positionStorage;
 
     Entity entity0 = entityManager.CreateEntity();
@@ -26,8 +29,14 @@ int main()
     std::cout << testPos0.x << " " << testPos0.y << std::endl;
     std::cout << "------" << std::endl;
 
-    positionStorage.Add(entity0, testPos0);
+    dNameStorage.Add(entity0, DisplayName{});
+    dNameStorage.Add(entity1, DisplayName{"test1"});
+    dNameStorage.Add(entity2, DisplayName{"asdf"});
+
+    dNameStorage.TestPrintAllDisplayNames();
+
     positionStorage.Add(entity1, testPos0);
+    positionStorage.Add(entity0, testPos0);
     positionStorage.Add(entity2, testPos0);
 
     positionStorage.TestPrintAllPositions();
