@@ -41,7 +41,10 @@ int main()
 
     positionStorage.TestPrintAllPositions();
 
+    std::cout << "------" << std::endl;
 
+    positionStorage.GetEntityPosition(entity0);
+    dNameStorage. GetEntityDisplayName(entity2);
 
     std::cin.get();
 

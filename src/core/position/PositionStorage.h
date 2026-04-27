@@ -14,6 +14,13 @@ class PositionStorage
             positions[entity.id] = position;
         }
 
+        Position GetEntityPosition(Entity entity)
+        {
+            std::unordered_map<uint32_t, Position>::const_iterator got = positions.find(entity.id);
+            std::cout << got->second.x << " | " << got->second.y << std::endl;
+            return got->second;
+        }
+
         void TestPrintAllPositions()
         {
             for(auto& [id, position] : positions)
