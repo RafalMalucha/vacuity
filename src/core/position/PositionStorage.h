@@ -16,9 +16,21 @@ class PositionStorage
 
         Position GetEntityPosition(Entity entity)
         {
-            std::unordered_map<uint32_t, Position>::const_iterator got = positions.find(entity.id);
-            std::cout << got->second.x << " | " << got->second.y << std::endl;
-            return got->second;
+            std::cout << positions.find(entity.id)->second.x << " | " << positions.find(entity.id)->second.y << std::endl;
+            return positions.find(entity.id)->second;
+        }
+
+        void UpdateEntityPosition(Entity entity, float delta_x, float delta_y)
+        {
+            Position entityPosition = positions.find(entity.id)->second;
+            entityPosition.x += delta_x;
+            entityPosition.y += delta_y;
+            positions.find(entity.id)->second = entityPosition;
+        }
+
+        void SetNewEntityPosition(Entity entity, Position newPosition)
+        {
+            positions.find(entity.id)->second = newPosition;
         }
 
         void TestPrintAllPositions()

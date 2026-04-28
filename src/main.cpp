@@ -44,7 +44,21 @@ int main()
     std::cout << "------" << std::endl;
 
     positionStorage.GetEntityPosition(entity0);
-    dNameStorage. GetEntityDisplayName(entity2);
+    dNameStorage.GetEntityDisplayName(entity2);
+
+    std::cout << "------" << std::endl;
+
+    dNameStorage.UpdateEntityDisplayName(entity0, "bleblelbe");
+    dNameStorage.TestPrintAllDisplayNames();
+
+    std::cout << "------" << std::endl;
+
+    positionStorage.UpdateEntityPosition(entity2, 0.3f, 0.5f);
+    positionStorage.GetEntityPosition(entity2);
+
+    Position newPos{1.0f, 1.0f};
+    positionStorage.SetNewEntityPosition(entity1, newPos);
+    positionStorage.TestPrintAllPositions();
 
     std::cin.get();
 

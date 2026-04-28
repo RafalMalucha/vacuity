@@ -17,9 +17,13 @@ class DisplayNameStorage
 
         DisplayName GetEntityDisplayName(Entity entity)
         {
-            std::unordered_map<uint32_t, DisplayName>::const_iterator got = displayNames.find(entity.id);
-            std::cout << got->second.displayName << std::endl;
-            return got->second;
+            std::cout << displayNames.find(entity.id)->second.displayName << std::endl;
+            return displayNames.find(entity.id)->second;
+        }
+
+        void UpdateEntityDisplayName(Entity entity ,std::string dNameNew)
+        {
+            displayNames.find(entity.id)->second.displayName = dNameNew;
         }
 
         void TestPrintAllDisplayNames()
